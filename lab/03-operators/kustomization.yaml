@@ -1,0 +1,9 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+# List of base Operator configurations.  These are the operators themselves.
+bases:
+  - github.com/redhat-canada-gitops/catalog/container-security-operator/base
+  - github.com/redhat-canada-gitops/catalog/pipelines-operator/base
+#  - rhsso
+#  - ../../base/03-operators/codeready-workspaces

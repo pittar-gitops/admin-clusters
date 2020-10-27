@@ -1,0 +1,18 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  labels:
+     app: openshift
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  name: openshift-realm
+  namespace: sso
+spec:
+  realm:
+    id: openshift
+    realm: openshift
+    enabled: true
+    displayName: Openshift Authentication Realm
+  instanceSelector:
+    matchLabels:
+      app: sso

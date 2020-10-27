@@ -1,0 +1,13 @@
+# Bitnami Sealed Secrets
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+# Namespace for the Sealed Secrets controller and resources.  Should be pre-created.
+namespace: sealed-secrets
+
+# Remote base.  Use the configuration from the Red Hat Canada GitOps repo (unofficial).
+bases:
+  - github.com/redhat-canada-gitops/catalog/sealed-secrets-operator/base
+
+resources:
+  - role-anyuid.yaml
